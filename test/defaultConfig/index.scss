@@ -1,0 +1,11 @@
+$variable: red;
+
+// this comment will be removed
+
+body {
+  background-color: $variable;
+  // and a little nesting
+  h1 {
+    font-size: 1.65em;
+  }
+}

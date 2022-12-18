@@ -1,0 +1,27 @@
+{
+  "name": "eleventy-plugin-inline-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "eleventy.config.js",
+  "scripts": {
+    "test": "npx ava test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/higby/eleventy-plugin-inline-sass.git"
+  },
+  "author": "Branden Higby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/higby/eleventy-plugin-inline-sass/issues"
+  },
+  "homepage": "https://github.com/higby/eleventy-plugin-inline-sass#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.20",
+    "ava": "^5.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "sass": "^1.57.0"
+  }
+}
