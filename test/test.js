@@ -14,14 +14,23 @@ test('Control Test', async t => {
   t.is(result[0].content, `There should be no styles`)
 })
 
-test('Default Config', async t => {
-  let result = await eleventyRun('./test/defaultConfig')
+test('Local Data', async t => {
+  let result = await eleventyRun('./test/localData')
 
   t.is(result[0].content, `body{background-color:red}body h1{font-size:1.65em}`)
 })
 
-test('User Config', async t => {
-  let result = await eleventyRun('./test/userConfig')
+test('Global Data', async t => {
+  let result = await eleventyRun('./test/globalData')
+
+  t.is(
+    result[0].content,
+    `body{background-color:violet}body h1{font-size:1.65em}`
+  )
+})
+
+test('Compiler Config', async t => {
+  let result = await eleventyRun('./test/compilerConfig')
 
   t.is(
     result[0].content,
@@ -34,8 +43,8 @@ body h1 {
   )
 })
 
-test('Import From Includes', async t => {
-  let result = await eleventyRun('./test/includesImport')
+test('Local Data With Import', async t => {
+  let result = await eleventyRun('./test/includesImportLocal')
 
   t.is(
     result[0].content,
@@ -43,8 +52,8 @@ test('Import From Includes', async t => {
   )
 })
 
-test('Global Styles', async t => {
-  let result = await eleventyRun('./test/globalStyles')
+test('Global Data With Import', async t => {
+  let result = await eleventyRun('./test/includesImportGlobal')
 
   t.is(
     result[0].content,
@@ -52,11 +61,20 @@ test('Global Styles', async t => {
   )
 })
 
-test('Custom Global Var', async t => {
-  let result = await eleventyRun('./test/globalVar')
+test('Custom Key Name', async t => {
+  let result = await eleventyRun('./test/keyConfig')
 
   t.is(
     result[0].content,
     `body{background-color:blue}body h1{font-size:1.65em}`
+  )
+})
+
+test('loadPaths Config', async t => {
+  let result = await eleventyRun('./test/loadPathsConfig')
+
+  t.is(
+    result[0].content,
+    `body{background-color:indigo}body h1{font-size:1.65em}`
   )
 })

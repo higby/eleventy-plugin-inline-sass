@@ -1,7 +1,7 @@
 module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(require('../../eleventy.config.js'), {
-    compile: {
-      style: 'expanded'
+    compiler: {
+      loadPaths: ['././test/loadPathsConfig/styles/']
     }
   })
 }
